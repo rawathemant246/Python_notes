@@ -50,10 +50,10 @@
 
 # RL as a Distinct Machine Learning Paradigm
 
-- RL stands alongside supervised learning and unsupervised learning as a third paradigm.
+- RL stands alongside **supervised learning** and **unsupervised learning** as a third paradigm.
 
 - Unlike supervised learning, RL does not require labeled examples.
 
-- Unlike unsupervised learning, RL focuses on optimizing a reward signal rather than just finding patterns.
+- Unlike unsupervised learning, RL focuses on optimizing a **reward signal** rather than just finding patterns.
 
-- In uncharted territories, RL allows agents to learn from their own experience rather than pre-existing data.
+- In **uncharted territories**, RL allows agents to learn **from their own experience** rather than pre-existing data.
