@@ -57,3 +57,48 @@
 - Unlike unsupervised learning, RL focuses on optimizing a **reward signal** rather than just finding patterns.
 
 - In **uncharted territories**, RL allows agents to learn **from their own experience** rather than pre-existing data.
+
+# Exploration vs. Exploitation
+
+One of the key challenges in reinforcement learning, which does not arise in other forms of learning, is the **trade-off between exploration and exploitation.**
+
+- **Exploration**: The agent tries new actions to discover their effects.
+
+- **Exploitation**: The agent uses known actions that yield high rewards.
+
+In **supervised and unsupervised learning**, this trade-off does not arise in the same way.
+
+# Example
+
+Imagine a **multi-armed bandit** scenario:
+
+- You are at a casino with multiple slot machines.
+
+- Each machine has an unknown payout probability.
+
+- You need to decide whether to **try a new machine (exploration) or stick to a machine that has given high rewards (exploitation).**
+
+- The goal is to **maximize total reward over time.**
+
+Mathematically, the epsilon-greedy algorithm balances exploration and exploitation:
+
+\[
+\pi(a | s) =
+\begin{cases} 
+1 - \epsilon + \frac{\epsilon}{|\mathcal{A}|}, & \text{if } a = \arg\max_{a'} Q(s, a') \\
+\frac{\epsilon}{|\mathcal{A}|}, & \text{otherwise}
+\end{cases}
+\]
+
+where:
+- **\( \pi(a | s) \)** is the probability of selecting action **\( a \)** in state **\( s \)**.
+- **\( \epsilon \)** is the exploration probability **(typically a small value like 0.1)**.
+- **\( Q(s, a) \)** is the estimated value of action **\( a \) in state \( s \)**.
+- **\( |\mathcal{A}| \)** is the total number of possible actions.
+
+### Explanation:
+- With probability **\( 1 - \epsilon \)**, the agent **exploits** the action with the highest Q-value.
+- With probability **\( \epsilon \)**, the agent **explores** by selecting a random action.
+
+This ensures that the agent does not get stuck in local optima and continues exploring better strategies.
+
