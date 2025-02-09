@@ -42,8 +42,8 @@ of each new word is converted to uppercase.
 
 ### Examples 
 
-#### Index-Based Access
 ```python
+# Index-Based Access
 text = "Python"
 print(text[0])  # Output: P
 print(text[-1]) # Output: n
