@@ -13,6 +13,7 @@ my_str : str
 - Strings can be created as character sequences in double or single quotes, as shown by the following two lines:
 
 `str1 = "DOUBLE QUOTED STRING"`
+
 `str2 = 'SINGLE QUOTED STRING'`
 
 
@@ -33,3 +34,90 @@ my_str : str
 - **str.index(other, start, end)/str.rindex(other, start, end)**: returns the index of the first or last occurrence of other. Unlike find(), an exception is thrown if the index is not present.
 - **str.count(text)** :counts how many times text occurs in the string.
 - **str.replace(old, new)** creates a new string in which all occurrences of old are replaced by new.
+- **str.split(delim)** : returns a list of substrings resulting from splitting the original string. The delimiter is no regular expression1. Without specifying a delimiter, a text is split with respect to whitespace.
+- **str.join(list)** :  does the opposite of split(). Specifically, the elements passed as a list are joined to the string as a delimiter.
+- **str.capitalize()/str.title()** : converts the first character to uppercase. With title() additionally within a string, the beginning
+of each new word is converted to uppercase.
+
+
+### Examples 
+
+#### Index-Based Access
+```python
+text = "Python"
+print(text[0])  # Output: P
+print(text[-1]) # Output: n
+
+
+# Slicing String
+
+text = "Hello, World!"
+print(text[0:5])    # Output: Hello
+print(text[:5])     # Output: Hello
+print(text[7:])     # Output: World!
+print(text[::-1])   # Output: !dlroW ,olleH
+print(text[::2])    # Output: Hlo ol!
+
+# Case Conversion
+
+text = "Python"
+print(text.lower())  # Output: python
+print(text.upper())  # Output: PYTHON
+
+# Removing Whitspace
+
+text = "  Hello  "
+print(text.strip())     # Output: "Hello"
+print(text.strip(" H")) # Output: "ello  "
+
+
+# Checking String Content
+
+text = "Python123"
+print(text.isalpha())  # Output: False
+print(text.isdigit())  # Output: False
+print("123".isdigit()) # Output: True
+
+# Checking Start/End of a string 
+
+text = "hello.py"
+print(text.startswith("hello"))  # Output: True
+print(text.endswith(".py"))      # Output: True
+
+
+# Finding and Indexing 
+
+text = "hello world"
+print(text.find("o"))   # Output: 4
+print(text.rfind("o"))  # Output: 7
+print(text.index("o"))  # Output: 4
+print(text.index("z")) # Raises ValueError
+
+# Counting Occurence
+
+text = "banana"
+print(text.count("a"))  # Output: 3
+
+# Replacing Substrings
+
+text = "hello world"
+print(text.replace("world", "Python"))  # Output: hello Python
+
+# Splitting and Joining Strings
+
+text = "apple,banana,orange"
+words = text.split(",")
+print(words)  # Output: ['apple', 'banana', 'orange']
+
+separator = " - "
+joined_text = separator.join(words)
+print(joined_text)  # Output: apple - banana - orange
+
+# Capitalization and Title Case 
+
+text = "hello world"
+print(text.capitalize()) # Output: Hello world
+print(text.title())      # Output: Hello World
+
+```
+
