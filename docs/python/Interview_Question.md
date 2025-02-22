@@ -26,3 +26,4 @@ Single underscore used in unpacking to ignore value(s).
 >>> _ # returns a list of elements
 [12, 13, 14, 15, 16]
 ```
+True
